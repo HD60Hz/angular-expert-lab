@@ -288,7 +288,7 @@ export class ApiService {
 
 Nous allons faire le test directement dans FilmService
 ```typeScript
-constructor(private http: HttpClient, private                                 apiService: ApiService) {
+constructor(private http: HttpClient, private apiService: ApiService) {
     console.log(apiService.apis);
   }
   
