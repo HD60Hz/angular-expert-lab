@@ -3,17 +3,17 @@ export const environment = {
   apis: [
     {
       id: 'auth',
-      url: 'https://auth.prod.com',
+      url: 'https://auth.pprod.com',
       options: {}
     },
     {
       id: 'ref',
-      url: 'https://ref.prod.com',
+      url: 'https://ref.pprod.com',
       options: {}
     },
     {
       id: 'rec',
-      url: 'https://ref.prod.com',
+      url: 'https://ref.pprod.com',
       options: {}
     }
   ]

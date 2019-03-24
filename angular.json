@@ -31,6 +31,30 @@
             "es5BrowserSupport": true
           },
           "configurations": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "qualif": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qualif.ts"
+                }
+              ]
+            },
+            "pprod": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qualif.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -63,6 +87,15 @@
             "browserTarget": "Lab02:build"
           },
           "configurations": {
+            "dev": {
+              "browserTarget": "Lab02:build:dev"
+            },
+            "qualif": {
+              "browserTarget": "Lab02:build:qualif"
+            },
+            "pprod": {
+              "browserTarget": "Lab02:build:pprod"
+            },
             "production": {
               "browserTarget": "Lab02:build:production"
             }

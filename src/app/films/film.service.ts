@@ -1,3 +1,5 @@
+import { Hosts } from './../models/config.interface';
+import { ApiService } from './../services/api.service';
 import { Film } from './film';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -10,7 +12,8 @@ import { catchError, tap, map } from 'rxjs/operators';
 })
 export class FilmService {
 
-  private filmsUrl = 'api/films';
+
+  private filmsUrl = '/api/films';
   private films: Film[];
 
   // Supprimer currentFilm: Film; pour qu'aucun component ou service puisse accéder à l'information en dehors de notre subject
@@ -21,24 +24,24 @@ export class FilmService {
   // déclarer notre observable pour informer en cas de changement
   selctedFilmChange$ = this.selctedFilmSource.asObservable();
 
-  constructor(private http: HttpClient) { }
-
-  // fonction comme facade public afin de mettre à jour le film selectionner
-  changeCurrentFilm(selectedFilm: Film | null): void {
-    this.selctedFilmSource.next(selectedFilm);
+  constructor(private http: HttpClient, private apiService: ApiService) {
+    console.log(apiService.apis);
   }
-
-  getFilms(): Observable<Film[]> {
-    if (this.films) {
-      return of(this.films);
-    }
-
-    return this.http.get<Film[]>(this.filmsUrl)
-      .pipe(
+  
+    getFilms(): Observable<Film[]> {
+      if (this.films) {
+        return of(this.films);
+      }
+      return this.apiService.get<Film[]>(Hosts.RECORD, this.filmsUrl).pipe(
         tap(data => console.log(JSON.stringify(data))),
         tap(data => this.films = data),
         catchError(this.handleError)
       );
+    }
+
+  // fonction comme facade public afin de mettre à jour le film selectionner
+  changeCurrentFilm(selectedFilm: Film | null): void {
+    this.selctedFilmSource.next(selectedFilm);
   }
 
   getFilm(id: number): Observable<Film> {
