@@ -1,7 +1,7 @@
 import { EditFilmComponent } from './film-edit/edit-film.component';
-import { FilmShellListComponent } from './film-list/film-shell-list.component';
+import { FilmShellListComponent } from './components/film-list/film-shell-list.component';
 import { FilmShellDetailComponent } from './film-detail/film-shell-detail.component';
-import { FilmShellComponent } from './film-shell/film-shell.component';
+import { FilmShellComponent } from './containers/film-shell/film-shell.component';
 import { FilmParamsService } from './services/film-params.service';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
