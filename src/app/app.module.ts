@@ -15,6 +15,8 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { StoreModule } from "@ngrx/store";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserModule,
     MessageModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({})
   ],
   providers: [FilmService, MessageService],
   bootstrap: [AppComponent]

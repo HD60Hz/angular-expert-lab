@@ -2,7 +2,10 @@ import { ActivatedRoute } from '@angular/router';
 import { FilmService } from './film.service';
 import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { Film } from './film';
+import { Store, select } from '@ngrx/store';
 
+import * as fromFilm from './state/film-reducers';
+import * as filmAction from './state/film-actions';
 
 @Component({
   selector: 'app-films',
@@ -33,7 +36,7 @@ export class FilmsComponent implements OnInit {
   }
 
 
-  constructor(private filmService: FilmService, private route: ActivatedRoute) {}
+  constructor(private filmService: FilmService, private route: ActivatedRoute, private store: Store<fromFilm.FilmState>) {}
 
   ngOnInit(): void {
     const filterBy = this.route.snapshot.queryParamMap.get('filterBy');
@@ -47,6 +50,11 @@ export class FilmsComponent implements OnInit {
       },
       error => this.errorMessage = <any>error
     );
+
+    this.store.pipe(select(fromFilm.getShowImage)).subscribe(
+      showImage => this.showImage = showImage
+    );
+    console.log('showImage reveived : ', this.showImage);
   }
 
   performFilter(filterBy: string): Film[] {
@@ -55,8 +63,9 @@ export class FilmsComponent implements OnInit {
       film.filmName.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
-  toggleImage(): void {
+  checkChanged(): void {
     this.showImage = !this.showImage;
+    this.store.dispatch(new filmAction.ActionCreator(this.showImage));
+    console.log('in checkChanged : value : ', this.showImage);
   }
-
 }

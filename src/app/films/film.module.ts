@@ -8,6 +8,8 @@ import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
 import { FilmResolver } from './film-resolver.service';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './state/film-reducers';
 
 const ROUTES = [
   { path: 'films', component: FilmsComponent },
@@ -37,7 +39,8 @@ const ROUTES = [
 @NgModule({
   imports: [
     SharedModule,
-    RouterModule.forChild(ROUTES)
+    RouterModule.forChild(ROUTES),
+    StoreModule.forFeature('films', {reducer})
   ],
   declarations: [
     FilmsComponent,

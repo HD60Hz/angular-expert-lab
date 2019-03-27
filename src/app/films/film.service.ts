@@ -16,7 +16,7 @@ export class FilmService {
   getFilms(): Observable<Film[]> {
     return this.http.get<Film[]>(this.filmsUrl)
       .pipe(
-        tap(data => console.log(JSON.stringify(data))),
+        tap(data => data),
         catchError(this.handleError)
       );
   }

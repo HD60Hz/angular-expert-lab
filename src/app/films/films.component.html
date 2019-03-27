@@ -6,7 +6,7 @@
       <div class="row">
         <app-criteria class="col-md-8 row" [listFilter]="listFilter" #filterCriteria></app-criteria>
         <div class="col-md-4 text-right">
-          <button class="btn btn-outline-primary btn-sm" (click)="toggleImage()">
+          <button class="btn btn-outline-primary btn-sm" (click)="checkChanged()">
             {{showImage ? "Cacher" : "Afficher"}} Image
           </button>
         </div>
