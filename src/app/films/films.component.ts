@@ -54,7 +54,6 @@ export class FilmsComponent implements OnInit {
     this.store.pipe(select(fromFilm.getShowImage)).subscribe(
       showImage => this.showImage = showImage
     );
-    console.log('showImage reveived : ', this.showImage);
   }
 
   performFilter(filterBy: string): Film[] {
@@ -66,6 +65,5 @@ export class FilmsComponent implements OnInit {
   checkChanged(): void {
     this.showImage = !this.showImage;
     this.store.dispatch(new filmAction.ActionCreator(this.showImage));
-    console.log('in checkChanged : value : ', this.showImage);
   }
 }

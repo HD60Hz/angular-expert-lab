@@ -19,10 +19,8 @@ export const getShowImage = createSelector(
   );
 
 export function reducer(state = initialState, action: FilmActions) {
-    console.log("in the reducer");
     switch (action.type) {
         case FilmActionTypes.ToggleImage: {
-            console.log("in the reducer : payload : ", action.payload);
             return { ...state, showImage : action.payload };
         }
 
