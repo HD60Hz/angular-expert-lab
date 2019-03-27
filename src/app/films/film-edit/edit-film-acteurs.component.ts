@@ -1,8 +1,8 @@
-import { FilmService } from './../film.service';
+import { FilmService } from '../services/film.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Film, FilmResolved } from '../film';
+import { Film, FilmResolved } from '../../models/film';
 
 @Component({
   templateUrl: './edit-film-acteurs.component.html'

@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { FilmService } from './../film.service';
-import { Film, FilmResolved } from './../film';
+import { FilmService } from '../services/film.service';
+import { Film, FilmResolved } from '../../models/film';
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'src/app/messages/message.service';
 

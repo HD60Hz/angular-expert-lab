@@ -1,8 +1,8 @@
-import { FilmService } from './../film.service';
+import { FilmService } from '../services/film.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { Film, FilmResolved } from '../film';
+import { Film, FilmResolved } from '../../models/film';
 
 @Component({
   templateUrl: './edit-film-basic-info.component.html'

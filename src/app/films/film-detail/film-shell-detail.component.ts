@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FilmService } from '../film.service';
-import { Film } from '../film';
+import { FilmService } from '../services/film.service';
+import { Film } from '../../models/film';
 
 @Component({
     selector: 'app-film-shell-detail',

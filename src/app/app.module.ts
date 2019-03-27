@@ -4,8 +4,8 @@ import { MessageModule } from './messages/message.module';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { FilmModule } from './films/film.module';
 import { MessageService } from './messages/message.service';
-import { FilmService } from './films/film.service';
-import { FilmData } from './films/films-data';
+import { FilmService } from './films/services/film.service';
+import { FilmData } from './films/mock/films-data';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 

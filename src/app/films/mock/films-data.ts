@@ -1,4 +1,4 @@
-import { Film } from './film';
+import { Film } from '../../models/film';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 

@@ -1,4 +1,4 @@
-import { Film } from './film';
+import { Film } from '../../models/film';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 

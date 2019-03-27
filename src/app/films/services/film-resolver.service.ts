@@ -4,7 +4,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import { FilmResolved } from './film';
+import { FilmResolved } from '../../models/film';
 import { FilmService } from './film.service';
 
 @Injectable({
