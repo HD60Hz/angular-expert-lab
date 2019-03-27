@@ -62,3 +62,19 @@ import { StoreModule } from "@ngrx/store";
 puis dans les imports : 
 StoreModule.forFeature('films', {})
 => remarque, ici, nous allons donner un nom a la feature, puis déclarer un ou une liste de reducer.
+
+
+============================
+step-02
+============================
+
+installer l'outils redux pour voir les différents états : 
+npm install @ngrx/store-devtools --save
+
+Nous allons ensuite l'importer dans notre module principale pour pouvoir l'utiliser : 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+puis dans les imports : 
+    StoreDevtoolsModule.instrument({
+      
+    })
